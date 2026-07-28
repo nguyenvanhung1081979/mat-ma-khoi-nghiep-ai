@@ -438,8 +438,18 @@ footer {
 @keyframes spin { to { transform: rotate(360deg); } }
 
 /* ================= Reader (sách lật) ================= */
+:root {
+  --gold: #c9973f;
+  --gold-soft: #a8672e;
+}
+
 .reader-page-body {
-  background: #20232f;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255,255,255,0.05), transparent 45%),
+    radial-gradient(circle at 85% 75%, rgba(255,255,255,0.04), transparent 50%),
+    radial-gradient(circle at 50% 100%, rgba(120,90,40,0.10), transparent 60%),
+    repeating-linear-gradient(115deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px, transparent 1px, transparent 3px),
+    linear-gradient(160deg, #232323 0%, #17171a 55%, #1c1a1f 100%);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -454,16 +464,23 @@ footer {
 }
 
 .reader-top a.back {
-  color: var(--text-muted, #b7bcd6);
+  color: rgba(245, 246, 251, 0.7);
   text-decoration: none;
-  font-size: 14px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(255,255,255,0.08);
+  padding: 8px 16px;
+  border-radius: 999px;
 }
 
 .reader-top .reader-title {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
+  letter-spacing: 0.05em;
   color: #fff;
-  opacity: 0.85;
+  opacity: 0.75;
 }
 
 .book-shell {
@@ -471,23 +488,38 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 18px;
   padding: 10px 16px 0;
 }
 
+.nav-arrow {
+  flex: none;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.85);
+  font-size: 20px;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+}
+
+.nav-arrow:disabled { opacity: 0.25; cursor: default; }
+
 .stage {
   position: relative;
-  width: min(640px, 92vw);
-  height: min(70vh, 720px);
+  width: min(980px, 90vw);
+  height: min(78vh, 760px);
   perspective: 2000px;
 }
 
 .page {
   position: absolute;
   inset: 0;
-  background: #fdfcf7;
+  background: #fdfcf5;
   border-radius: 6px;
-  box-shadow: 0 25px 60px rgba(0,0,0,0.45);
-  padding: 6% 7%;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.55);
   overflow: hidden;
   transform-origin: left center;
   transition: transform 0.6s ease, opacity 0.6s ease;
@@ -497,36 +529,96 @@ footer {
 
 .page.hidden { display: none; }
 
-.page .page-content {
+/* Spread = 2 trang mở song song, có bóng gáy sách ở giữa */
+.page.spread {
+  flex-direction: row;
+}
+
+.page.spread .leaf {
+  flex: 1 1 50%;
+  min-width: 0;
+  padding: 6% 6%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.page.spread .leaf.leaf-left {
+  padding-right: 5%;
+}
+
+.page.spread .leaf.leaf-right {
+  padding-left: 5%;
+}
+
+.page.spread::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 60px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(0,0,0,0.10) 42%,
+    rgba(0,0,0,0.16) 50%,
+    rgba(0,0,0,0.10) 58%,
+    transparent 100%);
+  pointer-events: none;
+}
+
+.page-content {
   overflow: auto;
   flex: 1;
 }
 
 .page h2 {
   font-family: "Noto Serif", Georgia, "Times New Roman", serif;
-  font-size: clamp(18px, 3vw, 24px);
+  font-size: clamp(18px, 2.6vw, 23px);
   margin: 0 0 14px;
   color: #201a3a;
 }
 
-.page h3 {
-  font-family: "Noto Serif", Georgia, "Times New Roman", serif;
-  font-size: clamp(15px, 2.4vw, 18px);
-  margin: 18px 0 10px;
-  color: #201a3a;
+.page h3, .leaf .eyebrow-title {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 18px;
+  text-align: center;
 }
+
+.page h3 { text-align: left; margin: 18px 0 10px; }
 
 .page p, .page li {
   font-family: "Noto Serif", Georgia, "Times New Roman", serif;
-  font-size: clamp(13px, 1.9vw, 15.5px);
+  font-size: clamp(12.5px, 1.5vw, 15px);
   line-height: 1.75;
   color: #2c2a3d;
+}
+
+.page .term {
+  color: var(--gold-soft);
+  font-weight: 700;
+}
+
+.page .pull-quote {
+  border-left: 3px solid var(--gold);
+  padding-left: 16px;
+  margin: 16px 0;
+  font-family: "Noto Serif", Georgia, serif;
+  font-style: italic;
+  font-size: clamp(13px, 1.6vw, 16px);
+  color: #3a3450;
 }
 
 .page .page-number {
   text-align: center;
   font-size: 11px;
-  color: #9b96a8;
+  color: #b0a99a;
   margin-top: 10px;
 }
 
@@ -535,6 +627,7 @@ footer {
   color: #fff;
   align-items: center;
   text-align: center;
+  padding: 6% 10%;
 }
 
 .page.cover-page .page-content {
@@ -554,7 +647,7 @@ footer {
   font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--accent-2);
+  color: var(--gold);
   font-weight: 700;
 }
 
@@ -574,48 +667,68 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 18px;
-  padding: 18px 16px 8px;
+  gap: 14px;
+  padding: 16px 16px 6px;
 }
-
-.controls button {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.2);
-  background: rgba(255,255,255,0.08);
-  color: #fff;
-  font-size: 18px;
-  cursor: pointer;
-}
-
-.controls button:disabled { opacity: 0.3; cursor: default; }
 
 .controls .page-indicator {
-  color: #f5f6fb;
-  font-size: 13px;
+  color: rgba(245, 246, 251, 0.6);
+  font-size: 12px;
   min-width: 70px;
   text-align: center;
+  letter-spacing: 0.04em;
 }
 
 .audio-bar {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 14px 20px 22px;
+  gap: 14px;
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 14px 20px 26px;
   color: #f5f6fb;
-  font-size: 13px;
+  font-size: 12.5px;
 }
 
 .audio-bar button {
-  width: 38px;
-  height: 38px;
+  flex: none;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   border: none;
-  background: rgba(255,255,255,0.12);
-  color: #fff;
+  background: rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.7);
   cursor: not-allowed;
-  font-size: 14px;
+  font-size: 13px;
 }
 
-.audio-bar .audio-label { opacity: 0.7; }
+.audio-bar .audio-track {
+  flex: 1;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.12);
+  position: relative;
+}
+
+.audio-bar .audio-track::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 0%;
+  border-radius: 999px;
+  background: var(--gold);
+}
+
+.audio-bar .audio-label { opacity: 0.55; white-space: nowrap; }
+
+@media (max-width: 760px) {
+  .book-shell { flex-wrap: wrap; }
+  .nav-arrow { order: 3; margin: 0 10px; }
+  .stage { order: 2; flex-basis: 100%; }
+  .page.spread { flex-direction: column; }
+  .page.spread::after { display: none; }
+  .page.spread .leaf { padding: 5% 7%; }
+  .page.spread .leaf.leaf-left,
+  .page.spread .leaf.leaf-right { padding: 5% 7%; }
+  .stage { height: min(80vh, 800px); }
+}
