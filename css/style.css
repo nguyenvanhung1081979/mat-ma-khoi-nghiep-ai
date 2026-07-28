@@ -601,6 +601,19 @@ footer {
   flex: 1;
 }
 
+.leaf.author-leaf {
+  align-items: center;
+  justify-content: center;
+}
+
+.author-photo-leaf {
+  width: 68%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 16px 34px rgba(0,0,0,0.25), 0 0 0 4px rgba(201,151,63,0.25);
+}
+
 .page h2 {
   font-family: "Noto Serif", Georgia, "Times New Roman", serif;
   font-size: clamp(18px, 2.6vw, 23px);
