@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Thanh toán — Mật Mã Khởi Nghiệp AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">MẬT MÃ KHỞI NGHIỆP AI</a>
+    <a class="nav-cta" href="index.html">← Về trang giới thiệu</a>
+  </div>
+</nav>
+
+<header class="hero" style="padding: 48px 0;">
+  <div class="container">
+    <span class="eyebrow">Thanh toán</span>
+    <h1 style="font-size: clamp(24px, 3.5vw, 34px);">Sở hữu trọn bộ <span>Mật Mã Khởi Nghiệp AI</span></h1>
+    <p class="lead">Chuyển khoản ngân hàng — sách được gửi tự động về email ngay khi hệ thống xác nhận thanh toán, không cần chờ admin duyệt thủ công.</p>
+  </div>
+</header>
+
+<section>
+  <div class="container" style="max-width: 640px;">
+
+    <div id="step-email" class="checkout-card">
+      <h2>Bước 1 — Nhập email nhận sách</h2>
+      <p class="checkout-note">Sách và link tải sẽ được gửi về email này ngay sau khi thanh toán thành công.</p>
+      <form id="order-form" class="order-form">
+        <input type="email" id="order-email" placeholder="Email của bạn" required />
+        <button type="submit" class="btn btn-primary">Lấy mã QR chuyển khoản</button>
+      </form>
+      <div class="form-msg" id="order-msg"></div>
+    </div>
+
+    <div id="step-pay" class="checkout-card" hidden>
+      <h2>Bước 2 — Chuyển khoản đúng nội dung</h2>
+      <p class="checkout-note">Hệ thống tự động xác nhận trong vài giây sau khi bạn chuyển khoản — không cần chụp màn hình gửi admin.</p>
+      <div class="qr-box">
+        <img id="qr-image" alt="Mã QR chuyển khoản" />
+        <div class="qr-details">
+          <div class="qr-row"><span>Số tiền</span><strong id="qr-amount"></strong></div>
+          <div class="qr-row"><span>Nội dung chuyển khoản</span><strong id="qr-content" class="qr-code"></strong></div>
+          <p class="qr-warn">⚠️ Bắt buộc giữ đúng nội dung chuyển khoản ở trên — thiếu nội dung này hệ thống sẽ không tự nhận diện được đơn hàng của bạn.</p>
+        </div>
+      </div>
+      <div class="waiting" id="waiting-state">
+        <span class="spinner"></span> Đang chờ xác nhận thanh toán…
+      </div>
+    </div>
+
+    <div id="step-done" class="checkout-card" hidden>
+      <h2>🎉 Thanh toán thành công!</h2>
+      <p class="checkout-note">Link tải sách đã được gửi về email của bạn, đồng thời bạn có thể tải trực tiếp tại đây:</p>
+      <a id="download-link" class="btn btn-primary" href="#" target="_blank" rel="noopener">Tải sách ngay</a>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    Mật Mã Khởi Nghiệp AI. © 2026.
+  </div>
+</footer>
+
+<script src="js/checkout.js"></script>
+</body>
+</html>

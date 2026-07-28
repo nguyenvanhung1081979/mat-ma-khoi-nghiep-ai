@@ -1,0 +1,9 @@
+{
+  "name": "mat-ma-khoi-nghiep-ai-web",
+  "private": true,
+  "version": "1.0.0",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.4",
+    "resend": "^4.0.1"
+  }
+}
