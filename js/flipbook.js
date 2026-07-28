@@ -24,6 +24,7 @@
   function goNext() {
     if (animating || current >= pages.length - 1) return;
     animating = true;
+    if (window.playPageTurnSound) window.playPageTurnSound();
 
     var curEl = pages[current];
     var nextEl = pages[current + 1];
@@ -57,6 +58,7 @@
   function goPrev() {
     if (animating || current <= 0) return;
     animating = true;
+    if (window.playPageTurnSound) window.playPageTurnSound();
 
     var curEl = pages[current];
     var prevEl = pages[current - 1];
