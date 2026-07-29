@@ -25,6 +25,9 @@ async function sendEbookEmail({ to, orderCode, readUrl, downloadUrlEpub, downloa
       <p>Bạn có thể đọc hoặc tải sách theo cách tiện nhất cho mình (link tải file có hiệu lực trong 24 giờ, link đọc trên web không giới hạn thời gian):</p>
       ${links}
       <p>Nếu không chắc máy mình đọc được định dạng file nào, cứ chọn "Đọc trực tiếp trên web" hoặc tải bản PDF.</p>
+      <p>🎁 <strong>Quà tặng kèm dành riêng cho bạn:</strong></p>
+      <p>🤖 <a href="https://vungalishop.vercel.app/qua-tang">Trọn bộ 176+ Trợ lý AI miễn phí</a></p>
+      <p>🎬 <a href="https://vungalishop.vercel.app/kho-prompt">Kho 275+ Prompt tạo video AI miễn phí</a></p>
       <p>Chúc bạn học tốt và sớm xây dựng được hệ thống của riêng mình!</p>
     `,
   });
