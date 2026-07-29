@@ -105,17 +105,25 @@ const handler = async (req, res) => {
     if (updateError) throw updateError;
 
     const bucket = process.env.EBOOK_STORAGE_BUCKET || "ebooks";
-    const filePath = process.env.EBOOK_FILE_PATH || "book.epub";
-    const { data: signed } = await supabase.storage
-      .from(bucket)
-      .createSignedUrl(filePath, 60 * 60 * 24);
+    const epubPath = process.env.EBOOK_FILE_PATH || "book.epub";
+    const pdfPath = process.env.EBOOK_FILE_PATH_PDF || "book.pdf";
+    const EXPIRY = 60 * 60 * 24;
+    const [epubResult, pdfResult] = await Promise.all([
+      supabase.storage.from(bucket).createSignedUrl(epubPath, EXPIRY),
+      supabase.storage.from(bucket).createSignedUrl(pdfPath, EXPIRY),
+    ]);
 
     await Promise.allSettled([
       notifyTelegram(
         `💰 <b>Đơn hàng mới đã thanh toán!</b>\nMã: ${orderCode}\nEmail: ${order.email}\nSố tiền: ${transferAmount}đ`
       ),
-      signed
-        ? sendEbookEmail({ to: order.email, orderCode, downloadUrl: signed.signedUrl })
+      epubResult.data || pdfResult.data
+        ? sendEbookEmail({
+            to: order.email,
+            orderCode,
+            downloadUrlEpub: epubResult.data ? epubResult.data.signedUrl : null,
+            downloadUrlPdf: pdfResult.data ? pdfResult.data.signedUrl : null,
+          })
         : Promise.resolve(),
     ]);
 

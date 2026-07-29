@@ -31,18 +31,24 @@ module.exports = async (req, res) => {
     }
 
     const bucket = process.env.EBOOK_STORAGE_BUCKET || "ebooks";
-    const filePath = process.env.EBOOK_FILE_PATH || "book.epub";
-    const { data: signed, error: signError } = await supabase.storage
-      .from(bucket)
-      .createSignedUrl(filePath, 60 * 60 * 24); // 24 giờ
+    const epubPath = process.env.EBOOK_FILE_PATH || "book.epub";
+    const pdfPath = process.env.EBOOK_FILE_PATH_PDF || "book.pdf";
+    const EXPIRY = 60 * 60 * 24; // 24 giờ
 
-    if (signError) {
-      console.error("createSignedUrl error:", signError);
-      res.status(200).json({ status: "paid", downloadUrl: null });
-      return;
-    }
+    const [epubResult, pdfResult] = await Promise.all([
+      supabase.storage.from(bucket).createSignedUrl(epubPath, EXPIRY),
+      supabase.storage.from(bucket).createSignedUrl(pdfPath, EXPIRY),
+    ]);
 
-    res.status(200).json({ status: "paid", downloadUrl: signed.signedUrl });
+    if (epubResult.error) console.error("createSignedUrl (epub) error:", epubResult.error);
+    if (pdfResult.error) console.error("createSignedUrl (pdf) error:", pdfResult.error);
+
+    res.status(200).json({
+      status: "paid",
+      downloadUrl: epubResult.data ? epubResult.data.signedUrl : null,
+      downloadUrlEpub: epubResult.data ? epubResult.data.signedUrl : null,
+      downloadUrlPdf: pdfResult.data ? pdfResult.data.signedUrl : null,
+    });
   } catch (err) {
     console.error("order-status error:", err);
     res.status(500).json({ error: "Lỗi hệ thống" });

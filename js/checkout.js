@@ -54,8 +54,11 @@
           clearInterval(pollTimer);
           stepPay.hidden = true;
           stepDone.hidden = false;
-          if (data.downloadUrl) {
-            document.getElementById("download-link").href = data.downloadUrl;
+          if (data.downloadUrlPdf) {
+            document.getElementById("download-link-pdf").href = data.downloadUrlPdf;
+          }
+          if (data.downloadUrlEpub) {
+            document.getElementById("download-link-epub").href = data.downloadUrlEpub;
           }
         }
       } catch (err) {
