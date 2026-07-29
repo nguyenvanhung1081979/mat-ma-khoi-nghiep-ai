@@ -14,7 +14,7 @@ module.exports = async (req, res) => {
       return;
     }
 
-    const amount = parseInt(process.env.EBOOK_PRICE_VND || "199000", 10);
+    const amount = parseInt(process.env.EBOOK_PRICE_VND || "99000", 10);
     const supabase = getSupabaseAdmin();
 
     // Thử tối đa 5 lần phòng khi trùng mã (xác suất rất thấp với 6 ký tự từ bảng 32 ký tự)
