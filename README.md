@@ -1,6 +1,6 @@
 # Mật Mã Khởi Nghiệp AI — Website + Backend giao hàng tự động
 
-Đã deploy: https://mat-ma-khoi-nghiep-ai.vercel.app
+Đã deploy: https://matmakhoinghiepai.vercel.app
 Repo: https://github.com/nguyenvanhung1081979/mat-ma-khoi-nghiep-ai
 
 ## Kiến trúc
