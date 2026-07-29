@@ -113,7 +113,7 @@ const handler = async (req, res) => {
       supabase.storage.from(bucket).createSignedUrl(pdfPath, EXPIRY),
     ]);
 
-    const siteUrl = process.env.SITE_URL || "https://web-seven-pied-61.vercel.app";
+    const siteUrl = process.env.SITE_URL || "https://mat-ma-khoi-nghiep-ai.vercel.app";
     const readUrl = `${siteUrl}/doc-sach.html?code=${encodeURIComponent(orderCode)}`;
 
     await Promise.allSettled([
