@@ -113,6 +113,9 @@ const handler = async (req, res) => {
       supabase.storage.from(bucket).createSignedUrl(pdfPath, EXPIRY),
     ]);
 
+    const siteUrl = process.env.SITE_URL || "https://web-seven-pied-61.vercel.app";
+    const readUrl = `${siteUrl}/doc-sach.html?code=${encodeURIComponent(orderCode)}`;
+
     await Promise.allSettled([
       notifyTelegram(
         `💰 <b>Đơn hàng mới đã thanh toán!</b>\nMã: ${orderCode}\nEmail: ${order.email}\nSố tiền: ${transferAmount}đ`
@@ -121,6 +124,7 @@ const handler = async (req, res) => {
         ? sendEbookEmail({
             to: order.email,
             orderCode,
+            readUrl,
             downloadUrlEpub: epubResult.data ? epubResult.data.signedUrl : null,
             downloadUrlPdf: pdfResult.data ? pdfResult.data.signedUrl : null,
           })

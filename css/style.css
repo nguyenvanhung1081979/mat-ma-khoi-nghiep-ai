@@ -830,3 +830,30 @@ footer {
   .page.spread .leaf.leaf-right { padding: 5% 7%; }
   .stage { height: min(80vh, 800px); }
 }
+
+/* ---------- Gate (xác minh đơn hàng cho trang đọc sách đầy đủ) ---------- */
+.gate-state {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  color: var(--text-light);
+  text-align: center;
+  padding: 40px 20px;
+  min-height: 50vh;
+}
+
+.gate-state .spinner {
+  width: 28px;
+  height: 28px;
+  border-width: 3px;
+  border-top-color: var(--gold);
+}
+
+.gate-state p {
+  max-width: 440px;
+  color: rgba(245, 246, 251, 0.75);
+  line-height: 1.6;
+}

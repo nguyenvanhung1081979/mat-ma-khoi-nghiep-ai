@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Đọc sách — Mật Mã Khởi Nghiệp AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="reader-page-body">
+
+<div class="reader-top">
+  <a class="back" href="index.html">← Về trang giới thiệu</a>
+  <div class="reader-title">MẬT MÃ KHỞI NGHIỆP AI — Bản đầy đủ</div>
+  <div style="width:110px"></div>
+</div>
+
+<div id="gate-loading" class="gate-state">
+  <span class="spinner"></span> Đang xác minh đơn hàng...
+</div>
+
+<div id="gate-error" class="gate-state" style="display:none;">
+  <p id="gate-error-msg">Không tìm thấy đơn hàng hợp lệ.</p>
+  <a class="btn btn-primary" href="thanh-toan.html">Quay lại trang thanh toán</a>
+</div>
+
+<div class="book-shell" id="book-shell" style="display:none;">
+  <button class="nav-arrow" id="btn-prev" aria-label="Trang trước">‹</button>
+  <div class="stage" id="stage">
+
+    <div class="page cover-page active image-cover" data-page="0">
+      <img class="cover-page-img" src="assets/images/cover.jpg" alt="Bìa sách Mật Mã Khởi Nghiệp AI" />
+    </div>
+
+    <div class="page hidden image-page" data-page="1">
+      <img src="assets/images/chuong-1-hero.jpg" alt="Tiền là Oxy — Đại dương xanh" />
+      <div class="page-number">1</div>
+    </div>
+
+    <div class="page hidden spread" data-page="2">
+      <div class="leaf leaf-left">
+        <div class="eyebrow-title">Lời tựa</div>
+        <div class="page-content">
+          <p>Nếu bạn đang cầm cuốn sách này, có thể bạn đã từng thử một vài mô hình kinh doanh — bán hàng online, nhận dịch vụ, chạy theo trend — và nhận ra sau vài năm, tiền vẫn không dư ra bao nhiêu, còn tuổi trẻ thì đã tiêu vào những đêm mất ngủ vì đơn hàng, vì khách hàng khó tính, vì đối thủ nhanh hơn bạn một bước.</p>
+          <p>Cuốn sách này không dạy lý thuyết suông. Đây là tấm bản đồ từng bước để bạn — dù xuất phát từ con số 0, không đội nhóm, không vốn lớn — xây dựng một <span class="term">hệ thống kiếm tiền tự động bằng AI</span>: từ chọn đúng thị trường, dựng nhân vật đại diện thương hiệu, lập trình trang bán hàng bằng ngôn ngữ tự nhiên, cho đến tự động hoá toàn bộ quy trình giao hàng.</p>
+        </div>
+        <div class="page-number">2</div>
+      </div>
+      <div class="leaf leaf-right">
+        <div class="eyebrow-title">Chương 1 · Câu chuyện của người đến sau</div>
+        <div class="page-content">
+          <p>Có một sự thật ít ai nói thẳng với bạn: phần lớn người mới bắt đầu khởi nghiệp không thua vì thiếu chăm chỉ. Họ thua vì chọn sai trận địa — rồi đổ toàn bộ sự chăm chỉ đó vào một cuộc chiến mà họ không có lợi thế để thắng.</p>
+          <p>Bạn có thể đã từng thử: mở shop bán hàng online, nhận chạy dịch vụ cho khách, hoặc lao vào một thị trường vì thấy "ai cũng đang làm". Ba năm sau nhìn lại, tiền vẫn không dư ra bao nhiêu, còn tuổi trẻ thì đã tiêu vào những đêm mất ngủ vì đơn hàng, vì khách hàng khó tính, vì đối thủ giảm giá sâu hơn bạn một ngày là bạn mất khách.</p>
+          <p>Đó không phải vì bạn kém. Đó là vì bạn đang chơi một ván bài mà luật chơi ưu ái người có nhiều vốn hơn, nhiều nhân sự hơn, và đến trước bạn nhiều năm.</p>
+        </div>
+        <div class="page-number">3</div>
+      </div>
+    </div>
+
+    <div class="page hidden spread" data-page="3">
+      <div class="leaf leaf-left">
+        <div class="eyebrow-title">1.1 · Vì sao mô hình cũ đốt người mới</div>
+        <div class="page-content">
+          <p><strong class="term">Thương mại điện tử (Ecom):</strong> Bạn cần vốn nhập hàng, vốn quảng cáo, kho bãi, vận chuyển, xử lý hoàn trả. Biên lợi nhuận thường bị bào mòn bởi phí sàn, phí quảng cáo ngày càng đắt, và cuộc đua giá không có điểm dừng.</p>
+          <p><strong class="term">Dịch vụ (agency, freelance):</strong> Thu nhập gắn chặt với thời gian bạn bỏ ra. Muốn kiếm gấp đôi, bạn phải làm việc gấp đôi hoặc thuê thêm người.</p>
+          <p><strong class="term">Chạy theo trend không có hệ thống:</strong> Hôm nay trend này, mai trend khác. Không có tài sản nào được tích lũy lại — mỗi lần bắt trend là một lần bắt đầu lại từ số 0.</p>
+          <p>Điểm chung của cả ba mô hình: rào cản gia nhập thấp, nhưng rào cản để thắng lại rất cao.</p>
+        </div>
+        <div class="page-number">4</div>
+      </div>
+      <div class="leaf leaf-right">
+        <div class="eyebrow-title">1.2 – 1.3 · Tiền là Oxy &amp; Đại dương xanh</div>
+        <div class="page-content">
+          <p>Tiền không phải là mục tiêu, <span class="term">tiền là oxy</span>. Mục tiêu thật sự của bạn là xây dựng được một hệ thống tạo ra dòng tiền đều đặn, đủ để bạn có quyền lựa chọn.</p>
+          <p><strong class="term">Không cần vốn nhập hàng, không cần tồn kho.</strong> Sản phẩm bạn giới thiệu là phần mềm — nhà cung cấp lo phần vận hành, bạn chỉ lo phần đưa đúng người dùng đến đúng sản phẩm.</p>
+          <p><strong class="term">Thị trường đang bùng nổ, chưa bão hòa.</strong> Số lượng công cụ AI mới ra mắt mỗi tháng tăng nhanh hơn số lượng người biết cách quảng bá chúng một cách bài bản.</p>
+        </div>
+        <div class="page-number">5</div>
+      </div>
+    </div>
+
+    <div class="page hidden image-page" data-page="4">
+      <img src="assets/images/ban-do-dinh-vi.jpg" alt="Bản đồ định vị thị trường" />
+      <div class="page-number">6</div>
+    </div>
+
+    <div class="page hidden spread" data-page="5">
+      <div class="leaf leaf-left">
+        <div class="eyebrow-title">1.4 · Earn in Public</div>
+        <div class="page-content">
+          <ol>
+            <li>Làm được một kết quả nhỏ — hãy chia sẻ nó ra công khai.</li>
+            <li>Chia sẻ cả quá trình, không chỉ chia sẻ thành công.</li>
+            <li>Biến mỗi bước tiến nhỏ thành một nội dung — nguồn nguyên liệu vô tận cho kênh của bạn.</li>
+          </ol>
+          <div class="eyebrow-title" style="margin-top:20px;">Tóm tắt chương</div>
+          <ul>
+            <li>Chọn mô hình có đòn bẩy cao, phù hợp với nguồn lực bạn đang có.</li>
+            <li>Affiliate AI: không vốn tồn kho, hoa hồng tích luỹ theo thời gian.</li>
+            <li>Bắt đầu Earn in Public ngay hôm nay.</li>
+            <li>Mang tư duy "nông dân AI": nhận vài việc nhỏ để tạo dòng tiền đầu tiên.</li>
+          </ul>
+        </div>
+        <div class="page-number">7</div>
+      </div>
+      <div class="leaf leaf-right">
+        <div class="eyebrow-title">Trích dẫn</div>
+        <div class="page-content" style="display:flex; align-items:center;">
+          <p class="pull-quote">"Tiền không phải là mục tiêu, tiền là oxy — thứ giúp bạn còn có quyền được lựa chọn."</p>
+        </div>
+        <div class="page-number">8</div>
+      </div>
+    </div>
+
+    <div class="page hidden spread" data-page="6">
+      <div class="leaf leaf-left">
+        <div class="eyebrow-title">1.5 · Chấp nhận làm "Nông dân AI"</div>
+        <div class="page-content">
+          <p>Khi bước chân vào thị trường AI, rào cản lớn nhất không phải là công nghệ, mà là sự kỳ vọng hoàn hảo. Rất nhiều người nghĩ rằng phải học code, phải hiểu thuật toán phức tạp thì mới làm được AI. Đó là một sai lầm đẩy bạn vào bẫy "đầy não" và mệt mỏi.</p>
+          <p>Thực tế, hãy mang tư duy của một "người nông dân làm kinh doanh" — không cần cao siêu, càng đơn giản, càng nông dân thì càng dễ kiếm tiền. Tất cả những hình ảnh, video bạn tạo ra lúc này đều là bản nháp. Đừng sợ sai.</p>
+          <p>Mục tiêu cốt lõi lúc này là: <span class="term">tạo ra dòng tiền nhỏ đầu tiên để thay đổi năng lượng bên trong bạn</span>. Bạn có thể làm thuê miễn phí cho vài doanh nghiệp — tạo web bằng Lovable AI, thiết kế ảnh sản phẩm bằng Nano Banana Pro. Chỉ cần 10 khách hàng trả 50–100 đô, bạn đã có 500–800 đô/tháng.</p>
+        </div>
+        <div class="page-number">9</div>
+      </div>
+      <div class="leaf leaf-right">
+        <div class="eyebrow-title">Chạy đà cho "Doanh nghiệp một người"</div>
+        <div class="page-content">
+          <p>Tiền bắt đầu về, "oxy" bắt đầu được bơm vào phổi. Bạn đã chính thức vượt qua giai đoạn hoang mang và thiết lập được bánh đà cho "Doanh nghiệp một người" của mình.</p>
+          <p>Nhưng, làm thế nào để mở rộng quy mô thu nhập lên hàng ngàn đô la mà không cần lộ diện quay video? Làm sao để có nhân viên làm việc 24/7 không cần trả lương? Bí mật nằm ở "Đại sứ thương hiệu ảo".</p>
+          <p class="pull-quote">Chào mừng bạn bước sang Chương 2: Bí mật xây dựng KOL AI — Cỗ máy in tiền không cần lộ mặt.</p>
+        </div>
+        <div class="page-number">10</div>
+      </div>
+    </div>
+
+    <div class="page hidden spread" data-page="7">
+      <div class="leaf leaf-left">
+        <div class="eyebrow-title">Chương 2 · KOL AI — Cỗ máy in tiền không cần lộ mặt</div>
+        <div class="page-content">
+          <p>Khi bước chân vào thị trường Affiliate hoặc kinh doanh online, rào cản lớn nhất của 90% mọi người là sự tự ti. Bạn không có ngoại hình xuất chúng, ngại đứng trước ống kính, hoặc không có kỹ năng ăn nói lưu loát. Nếu tự vác mặt mình lên video bán hàng, tỷ lệ chuyển đổi có thể bằng 0.</p>
+          <p>Nhưng hãy tưởng tượng, bạn sở hữu một cô gái xinh đẹp, gu thời trang đẳng cấp, giọng nói ngọt ngào, sẵn sàng review sản phẩm 24/7. Đó chính là sức mạnh của <span class="term">KOL AI (Đại sứ thương hiệu ảo)</span>.</p>
+        </div>
+        <div class="page-number">11</div>
+      </div>
+      <div class="leaf leaf-right">
+        <div class="eyebrow-title">2.1 · Quyền năng của KOL AI</div>
+        <div class="page-content">
+          <p>Thuê KOL/KOC người thật mang nhiều rủi ro: chi phí booking đắt đỏ, có thể vướng scandal, hôm nay làm cho bạn nhưng mai lại quảng cáo cho đối thủ.</p>
+          <p>Một nhân vật KOL AI mang lại ba đặc quyền tuyệt đối: <strong class="term">không đòi trả lương, không bao giờ bỏ cuộc, không ngừng tiến hoá cùng công nghệ</strong>. Bạn hoàn toàn có thể giấu mặt 100% và trở thành "ông trùm" phía sau hệ thống.</p>
+          <p><strong class="term">Bí quyết:</strong> đừng tự tưởng tượng nhân vật, hãy nghiên cứu "hình mẫu chuẩn ngành" — quan sát các KOL đang thành công trong đúng ngách của bạn để rút ra phong cách, tông màu, vibe thị trường đang đón nhận.</p>
+        </div>
+        <div class="page-number">12</div>
+      </div>
+    </div>
+
+    <div class="page hidden image-page" data-page="8">
+      <img src="assets/images/chuong-2-diagram.jpg" alt="Quy trình xây dựng KOL AI" />
+      <div class="page-number">13</div>
+    </div>
+
+    <div class="page hidden spread" data-page="9">
+      <div class="leaf leaf-left">
+        <div class="eyebrow-title">2.2 · Tạo hình nhất quán với Nano Banana Pro</div>
+        <div class="page-content">
+          <p>Yếu tố sống còn của nhân vật ảo là <span class="term">sự nhất quán</span> — gương mặt và thần thái phải giống hệt nhau ở mọi bối cảnh, nếu không người xem sẽ nhận ra ngay đây là nhân vật giả.</p>
+          <p>Công cụ đỉnh cao để làm việc này là <strong class="term">Nano Banana Pro</strong> (trên Google Flow) — tạo ảnh 4K hoàn toàn miễn phí, không giới hạn credit.</p>
+          <p><strong class="term">Lưu ý quan trọng:</strong> nhân vật phải là gương mặt hoàn toàn nguyên bản do AI sinh ra từ mô tả bằng lời — không dựa trên ảnh của bất kỳ người thật cụ thể nào. Nhân bản gương mặt người thật để dùng thương mại là vi phạm quyền hình ảnh cá nhân.</p>
+        </div>
+        <div class="page-number">14</div>
+      </div>
+      <div class="leaf leaf-right">
+        <div class="eyebrow-title">Quy trình tạo nhân vật gốc</div>
+        <div class="page-content">
+          <ol>
+            <li><strong>Viết mô tả nhân vật:</strong> độ tuổi, kiểu tóc, gu thời trang, vibe tổng thể bằng lời.</li>
+            <li><strong>Sinh nhiều phiên bản:</strong> đưa mô tả vào Nano Banana Pro, tạo 4-6 phiên bản, chọn ra "khuôn mặt gốc" làm ảnh tham chiếu.</li>
+            <li><strong>Câu thần chú "mọi thứ giữ nguyên":</strong> tải ảnh gốc + ảnh sản phẩm, dùng lệnh <em>"Mọi thứ giữ nguyên, giữ nguyên gương mặt, giữ nguyên cảm xúc."</em> để ghép nhân vật vào bối cảnh mới.</li>
+          </ol>
+        </div>
+        <div class="page-number">15</div>
+      </div>
+    </div>
+
+    <div class="page hidden spread" data-page="10">
+      <div class="leaf leaf-left">
+        <div class="eyebrow-title">2.3 · Giọng nói cho KOL AI</div>
+        <div class="page-content">
+          <p>Giọng nói quyết định một nửa tỷ lệ chốt sale. Đừng dùng giọng đọc AI khô khan mặc định — hãy dùng <strong class="term">MiniMax Audio</strong>, xử lý tiếng Việt mượt mà, giàu cảm xúc, vượt xa ElevenLabs, và liên tục tặng credit miễn phí.</p>
+          <ol>
+            <li><strong>Chọn giọng từ thư viện có sẵn:</strong> hàng chục giọng Việt theo độ tuổi, giới tính, phong cách — nghe thử vài giọng khớp với nhân vật.</li>
+            <li><strong>Tinh chỉnh Voice Design:</strong> điều chỉnh cao độ, tốc độ, sắc thái cảm xúc cho khớp cá tính nhân vật.</li>
+          </ol>
+        </div>
+        <div class="page-number">16</div>
+      </div>
+      <div class="leaf leaf-right">
+        <div class="eyebrow-title">Viết kịch bản chuẩn</div>
+        <div class="page-content">
+          <ol start="3">
+            <li><strong>Viết kịch bản bằng ChatGPT:</strong> văn phong tự nhiên, đúng cách người tiêu dùng thật hay nói. Từ tiếng Anh (Serum, Skincare) nên viết lại theo phát âm tiếng Việt (Si-rum, Xờ-kin-ke) để AI đọc không bị vấp.</li>
+            <li><strong>Chọn model 2.6 turbo</strong> (hoặc bản mới nhất) và tạo — bạn sẽ có giọng review chân thực, giàu cảm xúc, riêng cho nhân vật của mình.</li>
+          </ol>
+        </div>
+        <div class="page-number">17</div>
+      </div>
+    </div>
+
+    <div class="page hidden spread" data-page="11">
+      <div class="leaf leaf-left">
+        <div class="eyebrow-title">2.4 · Lắp ráp video hoàn chỉnh</div>
+        <div class="page-content">
+          <p><strong class="term">Lựa chọn 1 — Nhép môi bằng Top View AI:</strong> đưa ảnh chân dung KOL và file MP3 vào tính năng AI Avatar Lipsync — ảnh tĩnh sẽ tự nhép môi khớp lời nói.</p>
+          <p><strong class="term">Lựa chọn 2 — "Đừng bắt nó nói":</strong> lấy giọng đọc làm nhạc nền (voiceover), hình ảnh video là các góc quay b-roll sản phẩm, KOL đang cười, đang cầm sản phẩm. Khán giả mua vì nội dung và âm thanh lôi cuốn, không phải vì soi môi AI có chuẩn hay không.</p>
+        </div>
+        <div class="page-number">18</div>
+      </div>
+      <div class="leaf leaf-right">
+        <div class="eyebrow-title">Minh bạch</div>
+        <div class="page-content">
+          <p><strong class="term">Nguyên tắc cần giữ:</strong> dù nhân vật là ảo, hãy công khai đây là nội dung AI theo đúng chính sách nền tảng (TikTok, YouTube đều yêu cầu gắn nhãn). Nhiều kênh KOL ảo minh bạch vẫn phát triển rất mạnh, vì khán giả chấp nhận nội dung AI miễn là không bị lừa dối.</p>
+        </div>
+        <div class="page-number">19</div>
+      </div>
+    </div>
+
+    <div class="page hidden spread" data-page="12">
+      <div class="leaf leaf-left">
+        <div class="eyebrow-title">2.5 · Bán "câu chuyện" &amp; "trải nghiệm"</div>
+        <div class="page-content">
+          <p>Rất nhiều người thất bại vì chỉ tạo một khuôn mặt đẹp rồi bắt nhân vật cầm sản phẩm bán hàng vô hồn. Để khán giả yêu quý và rút hầu bao, KOL AI cần có "tâm hồn" và câu chuyện phía sau — dù ai cũng biết đó là nhân vật AI.</p>
+          <p><strong class="term">Bán cái "gu":</strong> xây một "tủ đồ" riêng cho nhân vật — phong cách luôn nhất quán dù đổi trang phục mỗi ngày.</p>
+          <p><strong class="term">Bán "trải nghiệm":</strong> dùng Nano Banana Pro đưa nhân vật "đi du lịch" — núi Phú Sĩ, cánh đồng tulip Hà Lan, một buổi chiều ở Bắc Âu.</p>
+        </div>
+        <div class="page-number">20</div>
+      </div>
+      <div class="leaf leaf-right">
+        <div class="eyebrow-title">Xây dựng tiểu sử nhân vật</div>
+        <div class="page-content">
+          <p>Giống bất kỳ linh vật thương hiệu hay idol ảo nào, một câu chuyện nền giúp khán giả đồng cảm và nhớ nhân vật lâu hơn:</p>
+          <p class="pull-quote">"Đây là Uyên Linh, một nhân vật đại diện lấy cảm hứng từ hành trình vươn lên của rất nhiều người — từng mơ về một cuộc sống tự do, và giờ đây, nhờ công nghệ, giấc mơ đó có hình hài."</p>
+          <p>Khi nhân vật có câu chuyện, nó không còn là cỗ máy nữa mà trở thành biểu tượng truyền cảm hứng — miễn là vẫn giữ nguyên tắc minh bạch: khán giả biết đây là nhân vật AI, họ vẫn yêu thích vì câu chuyện.</p>
+        </div>
+        <div class="page-number">21</div>
+      </div>
+    </div>
+
+    <div class="page hidden spread" data-page="13">
+      <div class="leaf leaf-left">
+        <div class="eyebrow-title">2.6 · Nâng cấp TVC điện ảnh</div>
+        <div class="page-content">
+          <p>Hình ảnh tĩnh và nhép môi chỉ là cấp độ một. Khi muốn nhận booking giá cao hơn hoặc chốt sale sản phẩm đắt tiền, nhân vật cần có chuyển động điện ảnh sắc nét — không cần trả hàng triệu đồng cho phần mềm dựng phim chuyên nghiệp.</p>
+          <p><strong class="term">Seedance 2.0 (qua Pippit AI):</strong> tải ảnh nhân vật lên, dùng câu lệnh tiếng Việt mô tả TVC mong muốn — hệ thống tạo video ~15 giây chuyển động mượt mà.</p>
+          <p><strong class="term">Gemini Omni (Google Flow):</strong> tạo thước phim ~10 giây trong vài phút, chi phí gần 0 đồng, vẫn giữ đúng gương mặt gốc.</p>
+        </div>
+        <div class="page-number">22</div>
+      </div>
+      <div class="leaf leaf-right">
+        <div class="eyebrow-title">2.7 · Xây dựng "mạng lưới" nhân vật AI</div>
+        <div class="page-content">
+          <p>Khi đã có "công thức Win" (kịch bản chốt nhiều đơn), đừng dừng ở một kênh — sức mạnh của AI là khả năng nhân bản. Giữ nguyên kịch bản giọng nói và bối cảnh, nhưng tạo thêm nhiều nhân vật AI gốc khác nhau cho nhiều kênh, cùng dẫn về một link Affiliate.</p>
+          <p><strong class="term">Điểm mấu chốt:</strong> đây nên là một "gia đình" nhân vật AI thuộc cùng thương hiệu do bạn công khai vận hành — không giả vờ là hàng chục người xa lạ độc lập khen sản phẩm, vừa tránh bị nền tảng khoá vì mạng lưới tài khoản giả, vừa đúng tinh thần "Earn in Public" ở Chương 1.</p>
+        </div>
+        <div class="page-number">23</div>
+      </div>
+    </div>
+
+    <div class="page hidden cover-page" data-page="14">
+      <div class="page-content">
+        <div>
+          <div class="tag">Chương 3</div>
+          <h2>Vibe Coding — Tự tay lập trình "kệ hàng" 0 đồng</h2>
+          <div class="subtitle">Dùng ngôn ngữ tự nhiên để dựng một cửa hàng số chuyên nghiệp, chi phí gần như 0 đồng.</div>
+        </div>
+        <div class="cover-caption">MẬT MÃ KHỞI NGHIỆP AI</div>
+      </div>
+    </div>
+
+    <div class="page hidden spread" data-page="15">
+      <div class="leaf leaf-left">
+        <div class="eyebrow-title">Chương 3 · Vibe Coding</div>
+        <div class="page-content">
+          <p>Kênh TikTok của bạn vừa đạt 100.000 lượt xem nhờ KOL AI. Khách tò mò bấm vào link bio — nhưng thay vì một "cửa hàng" chuyên nghiệp, họ bị dẫn đến một bài đăng lộn xộn. Ngay lập tức họ thoát ra. Bạn vừa đánh mất hàng chục đơn hàng chỉ trong tích tắc.</p>
+          <p><strong class="term">Vấn đề cốt lõi:</strong> làm thế nào để tạo ra một "cửa hàng số" chuyên nghiệp, chuyển đổi cao, mà không cần biết một dòng code nào, chi phí gần như 0 đồng? Câu trả lời nằm ở Vibe Coding.</p>
+        </div>
+        <div class="page-number">24</div>
+      </div>
+      <div class="leaf leaf-right">
+        <div class="eyebrow-title">3.1 · Lập trình bằng ngôn ngữ mẹ đẻ</div>
+        <div class="page-content">
+          <p>Vibe Coding: bạn dùng ngôn ngữ nói tự nhiên mô tả ý tưởng, AI tự gõ code xây phần mềm cho bạn. Không cần câu lệnh phức tạp — hãy dùng <span class="term">"câu lệnh nông dân"</span>: nghĩ gì viết nấy, chân chất, đi thẳng vào mục tiêu.</p>
+          <p class="pull-quote">"Tạo cho tôi một trang web bán Ebook khởi nghiệp. Giao diện màu trắng vàng, có nút thanh toán và ô nhập email để nhận quà."</p>
+        </div>
+        <div class="page-number">25</div>
+      </div>
+    </div>
+
+    <div class="page hidden image-page" data-page="16">
+      <img src="assets/images/chuong-3-diagram.jpg" alt="Luồng dựng kệ hàng 0 đồng" />
+      <div class="page-number">26</div>
+    </div>
+
+    <div class="page hidden spread" data-page="17">
+      <div class="leaf leaf-left">
+        <div class="eyebrow-title">3.2 · Lovable &amp; Claude Code</div>
+        <div class="page-content">
+          <p><strong class="term">Lovable AI:</strong> công cụ chuyên tạo web/app thương mại hóa cực nhanh, publish trực tiếp lên Internet.</p>
+          <p><strong class="term">Claude Code:</strong> dùng cho sản phẩm phức tạp hơn — chính trang web đọc sách "sách lật" của cuốn Ebook này cũng được lập trình bằng Claude Code.</p>
+        </div>
+        <div class="page-number">27</div>
+      </div>
+      <div class="leaf leaf-right">
+        <div class="eyebrow-title">3.3 · Vắt kiệt AI miễn phí</div>
+        <div class="page-content">
+          <p><strong class="term">Khởi động tinh gọn:</strong> tận dụng gói dùng thử miễn phí cho từng dự án nhỏ, đọc kỹ điều khoản fair-use, nâng cấp trả phí khi đã có doanh thu.</p>
+          <p><strong class="term">Thành công trước, sửa sau:</strong> đừng dùng prompt để sửa giao diện chưa ưng ý — hãy dùng Visual Edit, tự click đổi màu/ảnh, không tốn credit.</p>
+        </div>
+        <div class="page-number">28</div>
+      </div>
+    </div>
+
+    <div class="page hidden spread" data-page="18">
+      <div class="leaf leaf-left">
+        <div class="eyebrow-title">Notion — "bộ não ngầm"</div>
+        <div class="page-content">
+          <p>Đừng bắt AI chỉnh code mỗi khi đổi giá sản phẩm. Hãy đẩy toàn bộ thông tin (text, link, hình ảnh) vào một file Notion/Google Doc — quăng link đó cho Lovable. Khi web chạy, chỉ cần sửa chữ ở file gốc, website tự động cập nhật, tốn 0 đồng credit.</p>
+          <div class="eyebrow-title" style="margin-top:16px;">3.4 · Đẩy lên Internet</div>
+          <p>Lovable: ấn "Publish" là có tên miền miễn phí. Claude Code: đẩy code lên <strong>GitHub</strong>, kết nối <strong>Vercel</strong> — chạy 24/7, chi phí hosting bằng 0.</p>
+        </div>
+        <div class="page-number">29</div>
+      </div>
+      <div class="leaf leaf-right">
+        <div class="eyebrow-title">Phần thực hành</div>
+        <div class="page-content">
+          <p><strong>Bài tập:</strong></p>
+          <ul>
+            <li><em>Dễ:</em> viết vào Notion tên sản phẩm, 3 lợi ích, giá bán, link thanh toán.</li>
+            <li><em>Trung bình:</em> dán link Notion vào Lovable, yêu cầu tạo Landing Page tối giản.</li>
+            <li><em>Khó:</em> dùng Visual Edit đổi màu nút + ảnh KOL AI, rồi Publish.</li>
+          </ul>
+        </div>
+        <div class="page-number">30</div>
+      </div>
+    </div>
+
+    <div class="page hidden spread" data-page="19">
+      <div class="leaf leaf-left">
+        <div class="eyebrow-title">Checklist cuối chương</div>
+        <div class="page-content">
+          <ul>
+            <li>Đã đưa toàn bộ thông tin sản phẩm vào "bộ não ngầm".</li>
+            <li>Đã tạo thành công giao diện web đầu tiên trên Lovable.</li>
+            <li>Đã dùng Visual Edit để đổi ảnh/màu mà không tốn credit.</li>
+            <li>Đã chèn link thanh toán vào nút CTA.</li>
+            <li>Đã Publish và test trên điện thoại.</li>
+          </ul>
+        </div>
+        <div class="page-number">31</div>
+      </div>
+      <div class="leaf leaf-right">
+        <div class="eyebrow-title">Câu hỏi phản chiếu</div>
+        <div class="page-content" style="display:flex; align-items:center;">
+          <p class="pull-quote">Nếu phải bỏ 15 triệu đồng thuê thiết kế web, bạn sẽ chần chừ bao lâu? Khi Vibe Coding cho phép bạn tạo ra nó trong 5 phút với chi phí gần 0 đồng, ý tưởng nào đang lóe lên trong đầu bạn?</p>
+        </div>
+        <div class="page-number">32</div>
+      </div>
+    </div>
+
+    <div class="page hidden cover-page" data-page="20">
+      <div class="page-content">
+        <div>
+          <div class="tag">Chương 4</div>
+          <h2>Hệ thống Backend tự động</h2>
+          <div class="subtitle">Bộ não ngầm phía sau mọi website — Google Sheet, Make.com, Telegram Bot.</div>
+        </div>
+        <div class="cover-caption">MẬT MÃ KHỞI NGHIỆP AI</div>
+      </div>
+    </div>
+
+    <div class="page hidden spread" data-page="21">
+      <div class="leaf leaf-left">
+        <div class="eyebrow-title">Chương 4 · Backend tự động</div>
+        <div class="page-content">
+          <p>3 năm trước, khi hệ thống bắt đầu có khách, tôi rơi vào cơn ác mộng mới: thức đến 1-2 giờ sáng đăng bài Fanpage, copy tay từng email khách, canh điện thoại trả lời tin nhắn. Nếu kinh doanh online mà làm mọi thứ bằng tay, bạn không làm chủ hệ thống — bạn tự tạo ra một công việc làm thuê cho chính mình 14 tiếng/ngày.</p>
+          <p><strong class="term">Vấn đề cốt lõi:</strong> làm sao hệ thống hóa toàn bộ việc thu thập dữ liệu, đăng bài và báo cáo tự động với chi phí 0 đồng?</p>
+        </div>
+        <div class="page-number">33</div>
+      </div>
+      <div class="leaf leaf-right">
+        <div class="eyebrow-title">4.1 · Kho dữ liệu 0 đồng</div>
+        <div class="page-content">
+          <p>Biến một Google Sheet bình thường thành hệ thống thu thập dữ liệu chuyên nghiệp. Khách đăng nhập Google trên website một lần duy nhất, tên/email/số điện thoại tự động đẩy về Sheet của bạn.</p>
+          <p><strong class="term">Cách làm:</strong> Google Sheet → Tiện ích → Apps Script → Triển khai mới dạng Web App, quyền truy cập "Bất kỳ ai". Dán link URL vào code Claude Code/Lovable.</p>
+        </div>
+        <div class="page-number">34</div>
+      </div>
+    </div>
+
+    <div class="page hidden image-page" data-page="22">
+      <img src="assets/images/chuong-4-diagram.jpg" alt="3 nhân sự tự động của bộ não Backend" />
+      <div class="page-number">35</div>
+    </div>
+
+    <div class="page hidden spread" data-page="23">
+      <div class="leaf leaf-left">
+        <div class="eyebrow-title">4.2 · Nhân viên marketing mẫn cán</div>
+        <div class="page-content">
+          <p>Kết nối Claude Code với <strong class="term">Make.com</strong> để tự động hóa hoàn toàn Fanpage. Ra lệnh: <em>"Lấy bài viết và hình ảnh từ Google Drive, tự động đăng lên Fanpage lúc 8:00 sáng mỗi ngày."</em></p>
+          <p>Bạn có thể yêu cầu Claude Code tạo hẳn một "app quản lý" hiển thị lịch đăng bài, bài đã đăng, lượt share/comment.</p>
+        </div>
+        <div class="page-number">36</div>
+      </div>
+      <div class="leaf leaf-right">
+        <div class="eyebrow-title">4.3 · Trợ lý giám đốc 24/7</div>
+        <div class="page-content">
+          <p>Lên Telegram, tìm <code>@BotFather</code>, gõ <code>/newbot</code> để tạo bot riêng. BotFather cấp API Token — đưa vào hệ thống, bot sẽ tự nhắn tin mỗi khi có khách đăng ký.</p>
+          <p class="pull-quote">Case study: nối API Make.com + Telegram Bot, 100% bài đăng lên lịch tự động 365 ngày, data khách hàng chảy về Sheet ngay lập tức. Tổng chi phí: 0 đồng.</p>
+        </div>
+        <div class="page-number">37</div>
+      </div>
+    </div>
+
+    <div class="page hidden spread" data-page="24">
+      <div class="leaf leaf-left">
+        <div class="eyebrow-title">Phần thực hành</div>
+        <div class="page-content">
+          <p><strong>Checklist:</strong></p>
+          <ul>
+            <li>Đã tạo Google Sheet + lấy URL từ Apps Script.</li>
+            <li>Đã tạo Telegram Bot, có API Token.</li>
+            <li>Đã tạo tài khoản Make.com, liên kết Fanpage.</li>
+            <li>Đã có 10 bài viết mẫu nạp sẵn vào hệ thống.</li>
+          </ul>
+        </div>
+        <div class="page-number">38</div>
+      </div>
+      <div class="leaf leaf-right">
+        <div class="eyebrow-title">Phần kết luận</div>
+        <div class="page-content">
+          <p><strong class="term">3 mật lệnh:</strong> chia để trị dữ liệu (Google Drive/Sheet) · Make.com là đôi tay, Telegram là đôi mắt · thành công trước, sửa sau.</p>
+          <p class="pull-quote">Hệ thống đã sẵn sàng. Nhưng làm sao tìm ra "sản phẩm Win" để hệ thống này tạo ra doanh thu? Hãy lật sang Chương 5.</p>
+        </div>
+        <div class="page-number">39</div>
+      </div>
+    </div>
+
+    <div class="page hidden cover-page" data-page="25">
+      <div class="page-content">
+        <div>
+          <div class="tag">Chương 5</div>
+          <h2>Săn lùng "sản phẩm Win" tại thị trường quốc tế</h2>
+          <div class="subtitle">Affiliate AI — hoa hồng định kỳ bằng đô la, cùng Affitor.</div>
+        </div>
+        <div class="cover-caption">MẬT MÃ KHỞI NGHIỆP AI</div>
+      </div>
+    </div>
+
+    <div class="page hidden spread" data-page="26">
+      <div class="leaf leaf-left">
+        <div class="eyebrow-title">Chương 5 · Affiliate AI</div>
+        <div class="page-content">
+          <p>Những ngày livestream bán mỹ phẩm đến kiệt sức — phiên live bùng nổ, nhưng trừ chi phí nhập hàng, kho bãi, hoàn đơn, lợi nhuận mỏng như tờ giấy. Đó là "đại dương đỏ".</p>
+          <p><strong class="term">Vấn đề cốt lõi:</strong> cỗ máy KOL AI + kệ hàng + backend sẽ vô nghĩa nếu bạn đổ vào đó một sản phẩm lợi nhuận thấp.</p>
+        </div>
+        <div class="page-number">40</div>
+      </div>
+      <div class="leaf leaf-right">
+        <div class="eyebrow-title">5.1 · Mỏ vàng của kỷ nguyên số</div>
+        <div class="page-content">
+          <p>Affiliate AI là "đại dương xanh": các công ty AI trả hoa hồng cực cao, mang tính <span class="term">định kỳ (recurring)</span> — khách còn gia hạn phần mềm, tiền vẫn chảy về tài khoản bạn.</p>
+          <p>Để chiến thắng ở thị trường Mỹ/toàn cầu, cần công cụ phân tích chuyên sâu như <strong class="term">Affitor</strong>.</p>
+        </div>
+        <div class="page-number">41</div>
+      </div>
+    </div>
+
+    <div class="page hidden image-page" data-page="27">
+      <img src="assets/images/chuong-5-diagram.jpg" alt="Phễu săn sản phẩm Win quốc tế" />
+      <div class="page-number">42</div>
+    </div>
+
+    <div class="page hidden spread" data-page="28">
+      <div class="leaf leaf-left">
+        <div class="eyebrow-title">5.2 · Affitor — bí quyết lọc sản phẩm Win</div>
+        <div class="page-content">
+          <ol>
+            <li>Hoa hồng tối thiểu <strong>30% trở lên</strong>.</li>
+            <li>Hình thức trả <strong>định kỳ (12 tháng)</strong>.</li>
+            <li>Traffic hàng chục triệu/tháng, ưu tiên Mỹ, Pháp.</li>
+          </ol>
+          <p><em>Ví dụ:</em> một nền tảng video AI trả hoa hồng <strong>189 USD/khách</strong>, traffic 61 triệu/tháng.</p>
+        </div>
+        <div class="page-number">43</div>
+      </div>
+      <div class="leaf leaf-right">
+        <div class="eyebrow-title">Đòn bẩy kiếm tiền kép</div>
+        <div class="page-content">
+          <p><strong class="term">Tiếp thị liên kết cho Affitor:</strong> chia sẻ link giới thiệu, nhận 25–35% hoa hồng.</p>
+          <p><strong class="term">Đưa dự án lên nền tảng:</strong> tự tạo app AI (Chương 3), submit lên Affitor — nhận lại 50–80% traffic vĩnh viễn.</p>
+        </div>
+        <div class="page-number">44</div>
+      </div>
+    </div>
+
+    <div class="page hidden spread" data-page="29">
+      <div class="leaf leaf-left">
+        <div class="eyebrow-title">5.3 · Nghiên cứu đối thủ</div>
+        <div class="page-content">
+          <p>Trên Affitor, mục Top Ad cho xem quảng cáo hiệu quả nhất của sản phẩm. Dán link YouTube của đối thủ, hệ thống xuất transcript kịch bản gốc.</p>
+          <p><strong class="term">Lưu ý:</strong> kịch bản đối thủ có bản quyền — sao chép gần nguyên văn dễ vi phạm. Hãy <em>nghiên cứu</em>, không <em>sao chép</em>: hook mở đầu, lợi ích, CTA.</p>
+        </div>
+        <div class="page-number">45</div>
+      </div>
+      <div class="leaf leaf-right">
+        <div class="eyebrow-title">Viết kịch bản mới cho KOL AI</div>
+        <div class="page-content">
+          <p class="pull-quote">"Đây là những gì tôi rút ra từ một quảng cáo hiệu quả: [hook, lợi ích, CTA]. Hãy viết cho tôi một kịch bản HOÀN TOÀN MỚI, giọng văn riêng, khai thác cùng nỗi đau khách hàng nhưng góc kể chuyện khác."</p>
+          <p>Sau đó dùng ElevenLabs/MiniMax tạo giọng bản xứ, ghép vào KOL AI — vũ khí cạnh tranh toàn cầu, không rủi ro bản quyền.</p>
+        </div>
+        <div class="page-number">46</div>
+      </div>
+    </div>
+
+    <div class="page hidden spread" data-page="30">
+      <div class="leaf leaf-left">
+        <div class="eyebrow-title">5.4 · BioLink</div>
+        <div class="page-content">
+          <p>Dán link Affiliate trực tiếp lên Facebook/TikTok thường bị giảm hiển thị. Giải pháp: tạo trang <strong class="term">BioLink</strong> (Top View AI/Lovable) với video nền chuyển động, gắn ở bio.</p>
+          <p>Khi đăng bài Facebook: không để link trong bài, gắn BioLink dưới comment kèm ảnh. Luôn thu email trước khi điều hướng sang link mua hàng.</p>
+        </div>
+        <div class="page-number">47</div>
+      </div>
+      <div class="leaf leaf-right">
+        <div class="eyebrow-title">5.5 · Lộ trình 3 giai đoạn</div>
+        <div class="page-content">
+          <ol>
+            <li><strong>Thoát mông lung:</strong> kiếm tiền lẻ (5–10$) để có "oxy" sinh tồn.</li>
+            <li><strong>Tiền về liên tục:</strong> ráp Affiliate AI + KOL ảo + BioLink.</li>
+            <li><strong>Thu nhập thụ động:</strong> đóng gói kỹ năng thành Ebook/App, backend tự bán trọn đời.</li>
+          </ol>
+        </div>
+        <div class="page-number">48</div>
+      </div>
+    </div>
+
+    <div class="page hidden spread" data-page="31">
+      <div class="leaf leaf-left">
+        <div class="eyebrow-title">Phần thực hành</div>
+        <div class="page-content">
+          <p><strong>Checklist:</strong></p>
+          <ul>
+            <li>Đã dùng bộ lọc Affitor tìm sản phẩm.</li>
+            <li>Đã phân tích (không sao chép) kịch bản đối thủ.</li>
+            <li>Đã tạo BioLink có nền video chuyên nghiệp.</li>
+            <li>Nắm nguyên tắc không dán link affiliate trực tiếp vào bài Facebook.</li>
+          </ul>
+        </div>
+        <div class="page-number">49</div>
+      </div>
+      <div class="leaf leaf-right">
+        <div class="eyebrow-title">Câu hỏi phản chiếu</div>
+        <div class="page-content" style="display:flex; align-items:center;">
+          <p class="pull-quote">Nếu tiếp tục dán link trực tiếp và bị nền tảng giảm hiển thị, bạn đã đánh rơi bao nhiêu % khách tiềm năng? Một BioLink chuyên nghiệp hôm nay sẽ bảo vệ tài sản dữ liệu của bạn ra sao trong 3 năm tới?</p>
+        </div>
+        <div class="page-number">50</div>
+      </div>
+    </div>
+
+    <div class="page hidden cover-page" data-page="32">
+      <div class="page-content">
+        <div>
+          <div class="tag">Tổng kết</div>
+          <h2>Kế hoạch hành động 30 ngày</h2>
+          <div class="subtitle">Thay đổi vận mệnh với AI.</div>
+        </div>
+        <div class="cover-caption">MẬT MÃ KHỞI NGHIỆP AI</div>
+      </div>
+    </div>
+
+    <div class="page hidden spread" data-page="33">
+      <div class="leaf leaf-left">
+        <div class="eyebrow-title">Bẫy dopamine</div>
+        <div class="page-content">
+          <p>Não bạn đang ngập tràn khái niệm tuyệt vời: KOL AI, Vibe Coding, Backend, Affiliate. Bạn hưng phấn — nhưng đó chính là "bẫy dopamine". Rất nhiều người dừng lại ngay vạch đích này: biết mọi thứ, nhưng không làm gì cả.</p>
+          <p><strong class="term">Vấn đề cốt lõi:</strong> không phải thêm công cụ mới, mà là sự tập trung và năng lực thực thi.</p>
+        </div>
+        <div class="page-number">51</div>
+      </div>
+      <div class="leaf leaf-right">
+        <div class="eyebrow-title">Tuần 1 (Ngày 1–7): Khóa mục tiêu</div>
+        <div class="page-content">
+          <ul>
+            <li><strong>Chọn 1 công cụ chủ lực:</strong> Google Flow (Nano Banana Pro) để tạo ảnh.</li>
+            <li><strong>Chặn xao nhãng:</strong> từ chối học thêm công cụ phức tạp nếu chưa đẻ ra tiền.</li>
+            <li><strong>60 phút đầu ngày:</strong> luyện 1 câu lệnh tạo ảnh KOL AI.</li>
+          </ul>
+        </div>
+        <div class="page-number">52</div>
+      </div>
+    </div>
+
+    <div class="page hidden spread" data-page="34">
+      <div class="leaf leaf-left">
+        <div class="eyebrow-title">Tuần 2 (Ngày 8–14): Earn in Public</div>
+        <div class="page-content">
+          <p><strong class="term">Ăn mừng chiến thắng nhỏ:</strong> tạo ảnh đẹp? Đăng ngay lên Facebook/LinkedIn khoe.</p>
+          <p><strong class="term">Làm thuê không đồng:</strong> inbox chủ shop: <em>"Em dùng AI mặc thử sản phẩm lên người mẫu ảo miễn phí."</em> Khi họ ưng, thu 50–100 nghìn. Số tiền nhỏ nhưng kích hoạt niềm tin: "Ảo nhưng tạo ra tiền thật!"</p>
+        </div>
+        <div class="page-number">53</div>
+      </div>
+      <div class="leaf leaf-right">
+        <div class="eyebrow-title">Tuần 3 (Ngày 15–21): Lắp kệ hàng</div>
+        <div class="page-content">
+          <p><strong class="term">Lovable AI:</strong> soạn thông tin sản phẩm vào Google Doc, dùng "câu lệnh nông dân" tạo Landing Page trong 5 phút.</p>
+          <p><strong class="term">Kết nối Backend:</strong> Google Sheet thu email người bấm vào web.</p>
+        </div>
+        <div class="page-number">54</div>
+      </div>
+    </div>
+
+    <div class="page hidden spread" data-page="35">
+      <div class="leaf leaf-left">
+        <div class="eyebrow-title">Tuần 4 (Ngày 22–30): Đổ traffic</div>
+        <div class="page-content">
+          <p><strong class="term">Săn sản phẩm Win:</strong> Affitor, lọc hoa hồng định kỳ trên 30% tại Mỹ.</p>
+          <p><strong class="term">BioLink:</strong> thu email trước, rồi mới dẫn sang link mua hàng.</p>
+          <p><strong class="term">Nhân bản kênh:</strong> cùng kịch bản, thêm vài kênh dưới cùng thương hiệu công khai.</p>
+        </div>
+        <div class="page-number">55</div>
+      </div>
+      <div class="leaf leaf-right">
+        <div class="eyebrow-title">Phần thực hành</div>
+        <div class="page-content">
+          <ul>
+            <li><em>Dễ:</em> viết mục tiêu 30 ngày lên giấy, dán màn hình.</li>
+            <li><em>Trung bình:</em> tạo 3 ảnh nhân vật AI, đăng 1 ảnh kèm "Ngày 1: Bắt đầu hành trình làm chủ AI."</li>
+            <li><em>Khó:</em> đóng gói 1 kỹ năng thành PDF, tạo Landing Page đổi lấy email.</li>
+          </ul>
+        </div>
+        <div class="page-number">56</div>
+      </div>
+    </div>
+
+    <div class="page hidden spread" data-page="36">
+      <div class="leaf leaf-left">
+        <div class="eyebrow-title">Checklist &amp; Nhật ký</div>
+        <div class="page-content">
+          <ul>
+            <li>Đã khóa chặt mục tiêu, bỏ theo dõi kênh dạy AI lan man.</li>
+            <li>Đã có 1 nhân vật KOL AI "ruột".</li>
+            <li>Đã kiếm được ít nhất 50.000 VNĐ đầu tiên.</li>
+          </ul>
+          <p style="margin-top:10px;"><em>Nhật ký "Nông dân AI" mỗi tối:</em> việc quan trọng nhất hôm nay, đã chia sẻ chưa, bị xao nhãng bởi gì, bài học đắt giá nhất.</p>
+        </div>
+        <div class="page-number">57</div>
+      </div>
+      <div class="leaf leaf-right">
+        <div class="eyebrow-title">Câu hỏi phản chiếu</div>
+        <div class="page-content" style="display:flex; align-items:center;">
+          <p class="pull-quote">Nếu 30 ngày trôi qua mà bạn không làm gì cả, cuộc sống của bạn sẽ ra sao? Đâu là hành động nhỏ nhất bạn có thể làm ngay bây giờ để bánh răng bắt đầu lăn?</p>
+        </div>
+        <div class="page-number">58</div>
+      </div>
+    </div>
+
+    <div class="page hidden spread" data-page="37">
+      <div class="leaf leaf-left">
+        <div class="eyebrow-title">Phần kết luận</div>
+        <div class="page-content">
+          <p>Từ một người mông lung giữa kỷ nguyên số, giờ bạn đã nắm "mật mã" để xây một cỗ máy kinh doanh một người từ số 0.</p>
+          <p><strong class="term">3 bài học sinh tử:</strong></p>
+          <ol>
+            <li>Tiền là oxy, thực thi là chìa khóa.</li>
+            <li>Học từ mô hình đã thắng, biến thành của riêng bạn.</li>
+            <li>Bạn không cần một công ty, bạn cần một hệ thống.</li>
+          </ol>
+        </div>
+        <div class="page-number">59</div>
+      </div>
+      <div class="leaf leaf-right">
+        <div class="eyebrow-title">Bước tiếp theo trong 24 giờ</div>
+        <div class="page-content" style="display:flex; align-items:center;">
+          <p class="pull-quote">Hãy gấp cuốn sách này lại, mở máy tính lên, truy cập Google Flow và gõ câu lệnh đầu tiên. Chỉ cần bức ảnh đầu tiên xuất hiện, năng lượng của bạn sẽ thay đổi vĩnh viễn. Đừng đợi hoàn hảo mới làm, hãy làm để hoàn hảo!</p>
+        </div>
+        <div class="page-number">60</div>
+      </div>
+    </div>
+
+    <div class="page hidden spread" data-page="38">
+      <div class="leaf leaf-left">
+        <div class="eyebrow-title">Phụ lục · Tái sử dụng nội dung</div>
+        <div class="page-content">
+          <p>Cuốn sách này là một mỏ vàng — hãy vắt kiệt nó.</p>
+          <p><strong class="term">1. Bài đăng Facebook "cảnh tỉnh":</strong> hook "Lý do 90% người học AI không kiếm được 1 xu"; liệt kê 3 bước: chọn 1 tool → kiếm 5 đô đầu tiên → Earn in Public.</p>
+        </div>
+        <div class="page-number">61</div>
+      </div>
+      <div class="leaf leaf-right">
+        <div class="eyebrow-title">Chuỗi LinkedIn &amp; video YouTube</div>
+        <div class="page-content">
+          <p><strong class="term">2. Chuỗi 10 bài LinkedIn:</strong> "Earn in Public" là chiến lược marketing duy nhất Solopreneur cần; mô hình 3 giai đoạn khởi nghiệp AI.</p>
+          <p><strong class="term">3. Video YouTube:</strong> "Lộ trình 30 ngày thay đổi cuộc đời với AI" — quay màn hình sơ đồ tư duy, show doanh thu thực tế cuối video.</p>
+        </div>
+        <div class="page-number">62</div>
+      </div>
+    </div>
+
+    <div class="page hidden spread" data-page="39">
+      <div class="leaf leaf-left">
+        <div class="eyebrow-title">30 câu trích dẫn lan truyền</div>
+        <div class="page-content">
+          <p class="pull-quote">"Đừng học AI để làm học giả, hãy dùng AI như một gã nông dân — thực dụng và ra tiền."</p>
+          <p class="pull-quote">"Tiền là oxy. Đừng làm những dự án AI 0 đồng trong khi bạn đang thiếu tiền trả hóa đơn."</p>
+        </div>
+        <div class="page-number">63</div>
+      </div>
+      <div class="leaf leaf-right">
+        <div class="eyebrow-title">Bootcamp mini</div>
+        <div class="page-content">
+          <p>Lập group Zalo/Facebook kín "Thử thách 30 ngày khởi nghiệp AI". Mỗi ngày đăng 1 nhiệm vụ nhỏ trích từ Ebook. Yêu cầu thành viên nộp bài (Earn in Public) — cuối khóa mời tham gia coaching chuyên sâu, một hình thức upsell tự nhiên và đầy giá trị.</p>
+        </div>
+        <div class="page-number">64</div>
+      </div>
+    </div>
+
+    <div class="page hidden spread" data-page="40">
+      <div class="leaf leaf-left author-leaf">
+        <img class="author-photo-leaf" src="assets/images/author.jpg" alt="Nguyễn Văn Hùng" />
+      </div>
+      <div class="leaf leaf-right">
+        <div class="eyebrow-title">Về tác giả</div>
+        <div class="page-content">
+          <h3>Nguyễn Văn Hùng</h3>
+          <p>Là một kỹ sư phần mềm, chuyên gia công nghệ kiêm nhà đầu tư tài chính, ông mang đến góc nhìn đa chiều và thực chiến về làn sóng AI — kết hợp giữa tư duy công nghệ sắc bén, năng lực tài chính nhạy bén và góc nhìn truyền thông của một nhà báo.</p>
+        </div>
+        <div class="page-number">65</div>
+      </div>
+    </div>
+
+    <div class="page hidden cover-page" data-page="41">
+      <div class="page-content">
+        <div>
+          <div class="tag">Hết sách</div>
+          <h2>Cảm ơn bạn đã đọc trọn vẹn cuốn sách</h2>
+          <div class="subtitle">Giờ là lúc gấp sách lại và hành động. Hẹn gặp bạn ở đỉnh cao của sự tự do.</div>
+        </div>
+        <div class="cover-caption">MẬT MÃ KHỞI NGHIỆP AI</div>
+      </div>
+    </div>
+
+  </div>
+  <button class="nav-arrow" id="btn-next" aria-label="Trang sau">›</button>
+</div>
+
+<div class="controls" id="controls-bar" style="display:none;">
+  <div class="page-indicator" id="page-indicator">1 / 42</div>
+</div>
+
+<div class="audio-bar" id="audio-bar" style="display:none;">
+  <button disabled title="Audiobook đang được sản xuất">▶</button>
+  <div class="audio-track"></div>
+  <span class="audio-label">🎧 Audiobook — sắp ra mắt</span>
+</div>
+
+<script src="js/sound.js"></script>
+<script src="js/flipbook.js"></script>
+<script src="js/access-gate.js"></script>
+</body>
+</html>

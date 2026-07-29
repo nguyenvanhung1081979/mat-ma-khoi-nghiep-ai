@@ -54,6 +54,7 @@
           clearInterval(pollTimer);
           stepPay.hidden = true;
           stepDone.hidden = false;
+          document.getElementById("read-link").href = "doc-sach.html?code=" + encodeURIComponent(orderCode);
           if (data.downloadUrlPdf) {
             document.getElementById("download-link-pdf").href = data.downloadUrlPdf;
           }
